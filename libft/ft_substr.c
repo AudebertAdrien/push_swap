@@ -6,7 +6,7 @@
 /*   By: aaudeber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 15:38:29 by aaudeber          #+#    #+#             */
-/*   Updated: 2023/02/14 16:08:55 by aaudeber         ###   ########.fr       */
+/*   Updated: 2023/04/10 14:41:17 by aaudeber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 	if the lenght is greater than the length of the string,
 	return a pointer to null else return a pointer
 */
+
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {

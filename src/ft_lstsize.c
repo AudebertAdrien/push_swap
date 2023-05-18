@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaudeber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/16 18:06:25 by aaudeber          #+#    #+#             */
-/*   Updated: 2023/02/17 17:30:54 by aaudeber         ###   ########.fr       */
+/*   Created: 2023/02/15 18:59:12 by aaudeber          #+#    #+#             */
+/*   Updated: 2023/05/18 20:07:06 by aaudeber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void*))
+int	ft_lstsize(t_list *lst)
 {
-	t_list	*start;
-	t_list	*tmp;
+	int	count;
 
-	if (!lst || !del)
-		return ;
-	start = *lst;
-	while (start)
+	count = 0;
+	if (!lst)
+		return (0);
+	while (lst)
 	{
-		tmp = start->next;
-		del(start->content);
-		free(start);
-		start = tmp;
-	}	
-	*lst = NULL;
+		lst = lst->next;
+		count++;
+	}
+	return (count);
 }

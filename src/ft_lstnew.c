@@ -1,42 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaudeber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/17 11:17:00 by aaudeber          #+#    #+#             */
-/*   Updated: 2023/02/17 17:32:04 by aaudeber         ###   ########.fr       */
+/*   Created: 2023/02/15 15:33:37 by aaudeber          #+#    #+#             */
+/*   Updated: 2023/05/18 20:06:19 by aaudeber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_list	*ft_lstnew(int nb)
 {
 	t_list	*new;
-	t_list	*ptr;
 
-	if (!lst || !f || !del)
-		return (NULL);
-	new = ft_lstnew(NULL);
+	new = (t_list *)malloc(sizeof(t_list));
 	if (!new)
 		return (NULL);
-	ptr = new;
-	while (lst)
-	{
-		new->content = (*f)(lst->content);
-		if (lst->next)
-		{
-			new->next = ft_lstnew(NULL);
-			if (!new->next)
-			{
-				ft_lstclear(&ptr, del);
-				return (NULL);
-			}
-			new = new->next;
-		}
-		lst = lst->next;
-	}
-	return (ptr);
+	new->nb = nb;
+	new->next = NULL;
+	return (new);
 }

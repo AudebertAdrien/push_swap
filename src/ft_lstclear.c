@@ -1,21 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaudeber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/15 18:18:54 by aaudeber          #+#    #+#             */
-/*   Updated: 2023/02/16 17:53:08 by aaudeber         ###   ########.fr       */
+/*   Created: 2023/02/16 18:06:25 by aaudeber          #+#    #+#             */
+/*   Updated: 2023/05/18 20:09:51 by aaudeber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	if (!lst || !new)
+	t_list	*start;
+	t_list	*tmp;
+
+	if (!lst || !del)
 		return ;
-	new->next = *lst;
-	*lst = new;
+	start = *lst;
+	while (start)
+	{
+		tmp = start->next;
+		del(start->content);
+		free(start);
+		start = tmp;
+	}	
+	*lst = NULL;
 }

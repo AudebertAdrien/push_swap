@@ -1,37 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaudeber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 17:54:17 by aaudeber          #+#    #+#             */
-/*   Updated: 2022/11/09 20:55:15 by aaudeber         ###   ########.fr       */
+/*   Created: 2023/02/15 18:18:54 by aaudeber          #+#    #+#             */
+/*   Updated: 2023/05/18 20:06:51 by aaudeber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	str_len(char *str)
+#include "push_swap.h"
+
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-
-char	*ft_strncat(char *dest, char *src, unsigned int nb)
-{
-	unsigned int	i;
-	unsigned int	dest_l;
-
-	i = 0;
-	dest_l = str_len(dest);
-	while (src[i] && (i < nb))
-	{
-		dest[dest_l + i] = src[i];
-		i++;
-	}
-	dest[dest_l + i] = '\0';
-	return (dest);
+	if (!lst || !new)
+		return ;
+	new->next = *lst;
+	*lst = new;
 }
