@@ -4,6 +4,8 @@ CC			= gcc -g
 CFLAGS		= -Wall -Wextra
 
 SRCS		= src/main.c \
+			  src/rules.c \
+			  src/sort.c \
 			  src/ft_lstnew.c \
 			  src/ft_lstadd_front.c \
 			  src/ft_lstadd_back.c \
@@ -21,12 +23,12 @@ OBJ			= $(SRCS:src/%.c=obj/%.o)
 obj/%.o: src/%.c create_obj_dir
 	@$(CC) $(CFLAGS) $(INC) -c $< -o $@
 
-all: make_lib create_obj_dir $(NAME) 
+all: create_obj_dir $(NAME) 
 
 create_obj_dir :
 	@mkdir -p obj
 
-make_lib:
+make_libs:
 	@echo ✅ "Compile libft\n"
 	@make re -s -C ./libft
 	@echo ✅ "Compile ft_printf\n"
@@ -36,13 +38,13 @@ $(NAME): $(OBJ)
 	@echo ✅ "Compile push_swap\n"
 	@$(CC) $^ -o $@ $(INC) -Llibft -lft -Lprintf -lftprintf
 
-clean_lib:
+clean_libs:
 	@echo ✅ "Clean libft\n"
 	@make fclean -s -C ./libft
 	@echo ✅ "Clean ft_printf\n"
 	@make fclean -s -C ./printf
 	
-clean: clean_lib
+clean: 
 	@echo ✅ "Clean push_swap\n"
 	@rm -rf $(OBJ)
 	@rm -rf obj/
