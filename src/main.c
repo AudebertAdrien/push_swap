@@ -6,7 +6,7 @@
 /*   By: aaudeber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 16:40:47 by aaudeber          #+#    #+#             */
-/*   Updated: 2023/05/28 13:44:19 by aaudeber         ###   ########.fr       */
+/*   Updated: 2023/05/28 16:40:19 by aaudeber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ int	main(int argc, char **argv)
 		//ft_lstrotate("ra", &lst_a, lst_a, lst_a->next);
 		//ft_lstrotate_reversed(&lst_a, ft_lstlast(lst_a), ft_lstsize(lst_a));
 
+		ft_printf("\n");
 		ft_printf("AAAA: %p\n", &lst_a);
 		ft_print_lst(&lst_a);
 		ft_printf("\n");
