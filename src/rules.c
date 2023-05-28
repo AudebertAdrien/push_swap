@@ -6,7 +6,7 @@
 /*   By: aaudeber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 13:54:48 by aaudeber          #+#    #+#             */
-/*   Updated: 2023/05/28 14:02:50 by aaudeber         ###   ########.fr       */
+/*   Updated: 2023/05/28 20:04:02 by aaudeber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ int	ft_lstswap(char *cmd, t_list **lst, t_list *s1, t_list *s2)
 	return (0);
 }
 
-int	ft_lstpush(char *cmd, t_list **L1,  t_list **L2)
+int	ft_lstpush(char *cmd, t_list **t1,  t_list **t2)
 {
 	t_list	*tmp;
 	
-	tmp = *L2;
-	*L2 = *L1;
-	*L1 = (*L1)->next;
-	(*L2)->next = tmp;
+	tmp = *t2;
+	*t2 = *t1;
+	*t1 = (*t1)->next;
+	(*t2)->next = tmp;
 
 	ft_printf("%s\n", cmd);
 	return (1);
@@ -41,7 +41,7 @@ int	ft_lstrotate(char *cmd, t_list **lst, t_list *s1, t_list *s2)
 	*lst = s2;
 	s1->next = NULL;
 	ft_lstadd_back(lst, s1);
-	ft_printf("%s\n", cmd);
+	//ft_printf("%s\n", cmd);
 	return (1);
 }
 

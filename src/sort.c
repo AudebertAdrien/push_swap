@@ -6,12 +6,13 @@
 /*   By: aaudeber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 14:02:42 by aaudeber          #+#    #+#             */
-/*   Updated: 2023/05/28 16:40:30 by aaudeber         ###   ########.fr       */
+/*   Updated: 2023/05/28 20:48:39 by aaudeber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/*
 int	is_sorted(t_list **lst_a, t_list **lst_b)
 {
 	int		sorted;
@@ -53,66 +54,44 @@ int	ft_sort(t_list **lst_a, t_list **lst_b)
 	}
 	return (0);
 }
+*/
 
-/*
 void	ft_sort(t_list **lst_a, t_list **lst_b)
 {
 	int	i;
 	int	mask;
+	t_list	*s1;
+	t_list	*s2;
 	t_list	*tmp;
 
 	i = 0;
-	mask = 1;
+	mask = 128;
 	tmp = *lst_a;
-	while (i < 8)
+	while (*lst_a)
 	{
-		while (tmp)
-		{
-			//printf("\nP1 : %p \n", tmp);
-			if (mask << i & tmp->nb)
-			{
-				printf("1");
-				//ft_lstpush("pb", tmp, lst_b);
-				tmp = tmp->next;
-			}
-			else
-			{
-				printf("0");
-				printf("\nP2 : %p \n", tmp);
-				ft_lstrotate("ra", tmp, tmp, tmp->next);
-			}
-			//ft_lstpush("pb", lst_a, lst_b);
-			//printf("\n====");
-		}
-		//printf("\n///////////\n");
-		tmp = *lst_a;
-		printf("\n");
-		i++;
-	}
-}
-*/
+		printf("%p\n", *lst_a);
+		printf(">> %d\n", mask >> i & s1->nb);
+		//sleep(1);
 
-/*
-void	ft_sort(t_list **lst_a, t_list **lst_b)
-{
-	t_list	*tmp;
-	t_list	*s1;
-	t_list 	*s2;
-	int	i = 0;
-	
-	(void)lst_b;
-	while (i < ft_lstsize(*lst_a) - 1)
-	{
 		s1 = *lst_a;
 		s2 = s1->next;
-		if (s2 && s1->nb > s2->nb)
+		if (mask >> i & s1->nb)
 		{
-			ft_printf("%d : %d\n", s1->nb, s2->nb);
-			ft_lstswap("sa", lst_a, *lst_a, (*lst_a)->next);
+			ft_putstr_fd("1 :", 1);
+			ft_lstpush("pb", lst_a, lst_b);
 		}
-		ft_lstrotate("ra", lst_a, *lst_a, (*lst_a)->next);
-		i++;
+		else if (ft_lstsize(*lst_a) == 1)
+		{
+			ft_putstr_fd("1 bis :", 1);
+			ft_lstpush("pb", lst_a, lst_b);
+		}
+		else
+		{
+			printf("0");
+			ft_lstrotate("ra", lst_a, s1, s2);
+			i++;
+		}
 	}
-	ft_lstrotate("ra", lst_a, *lst_a, (*lst_a)->next);
+	printf("\n");
+	i++;
 }
-*/
