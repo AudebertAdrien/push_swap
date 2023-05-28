@@ -6,7 +6,7 @@
 /*   By: aaudeber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 16:40:47 by aaudeber          #+#    #+#             */
-/*   Updated: 2023/05/19 18:02:23 by aaudeber         ###   ########.fr       */
+/*   Updated: 2023/05/28 13:44:19 by aaudeber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_print_lst(t_list **lst)
 {
-	ft_printf("//////\n");
+	ft_printf("////// \\\\\\\\\\\\ \n");
 	while (*lst)
 	{
 		ft_printf("p_lst : %p => ", *lst);
@@ -63,7 +63,6 @@ int	main(int argc, char **argv)
 		ft_printf("===========");
 		ft_printf("\n\n");
 		ft_printf("BBBB: %p\n", &lst_b);
-
 		ft_print_lst(&lst_b);
 	}
 	ft_printf("\n");

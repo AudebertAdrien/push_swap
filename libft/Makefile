@@ -1,7 +1,7 @@
 NAME		= libft.a
 
 CC			= gcc
-ERROR_FLAGS	= -Wall -Wextra -Werror
+CFLAGS	= -Wall -Wextra -Werror
 
 SRCS		= ft_atoi.c \
 			ft_isalnum.c \
@@ -41,7 +41,7 @@ SRCS		= ft_atoi.c \
 OBJS		= $(SRCS:.c=.o)
 
 .c.o:
-	$(CC) $(ERROR_FLAGS) -I. -c $< -o $@
+	$(CC) $(CFLAGS) -I. -c $< -o $@
 
 all: $(NAME)
 
