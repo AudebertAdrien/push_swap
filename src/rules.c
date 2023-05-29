@@ -6,7 +6,7 @@
 /*   By: aaudeber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 13:54:48 by aaudeber          #+#    #+#             */
-/*   Updated: 2023/05/28 20:04:02 by aaudeber         ###   ########.fr       */
+/*   Updated: 2023/05/29 13:53:58 by aaudeber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	ft_lstrotate(char *cmd, t_list **lst, t_list *s1, t_list *s2)
 	*lst = s2;
 	s1->next = NULL;
 	ft_lstadd_back(lst, s1);
-	//ft_printf("%s\n", cmd);
+	ft_printf("%s\n", cmd);
 	return (1);
 }
 
