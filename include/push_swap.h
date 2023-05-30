@@ -6,7 +6,7 @@
 /*   By: aaudeber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 16:43:40 by aaudeber          #+#    #+#             */
-/*   Updated: 2023/05/29 14:11:05 by aaudeber         ###   ########.fr       */
+/*   Updated: 2023/05/30 13:46:50 by aaudeber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@
 
 typedef struct s_list
 {
-	unsigned int				nb;
+	int				nb;
+	unsigned int	index;
 	struct s_list	*next;
 }			t_list;
 
