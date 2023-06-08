@@ -6,7 +6,7 @@
 /*   By: aaudeber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 13:54:48 by aaudeber          #+#    #+#             */
-/*   Updated: 2023/05/29 13:53:58 by aaudeber         ###   ########.fr       */
+/*   Updated: 2023/06/07 14:50:29 by aaudeber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_lstswap(char *cmd, t_list **lst, t_list *s1, t_list *s2)
 	s1->next = s2->next;
 	s2->next = s1;
 	ft_printf("%s\n", cmd);
-	return (0);
+	return (1);
 }
 
 int	ft_lstpush(char *cmd, t_list **t1,  t_list **t2)
@@ -29,7 +29,6 @@ int	ft_lstpush(char *cmd, t_list **t1,  t_list **t2)
 	*t2 = *t1;
 	*t1 = (*t1)->next;
 	(*t2)->next = tmp;
-
 	ft_printf("%s\n", cmd);
 	return (1);
 }
@@ -45,7 +44,7 @@ int	ft_lstrotate(char *cmd, t_list **lst, t_list *s1, t_list *s2)
 	return (1);
 }
 
-char	*ft_lstrotate_reversed(char *cmd, t_list **lst, t_list *last, int size)
+int	ft_lstrotate_reversed(char *cmd, t_list **lst, t_list *last, int size)
 {
 	int	i;
 	t_list	*tmp;
@@ -59,5 +58,6 @@ char	*ft_lstrotate_reversed(char *cmd, t_list **lst, t_list *last, int size)
 	}
 	tmp->next = NULL;
 	ft_lstadd_front(lst, last);
-	return (cmd);
+	ft_printf("%s\n", cmd);
+	return (1);
 }

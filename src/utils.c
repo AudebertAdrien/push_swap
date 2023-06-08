@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.c                                             :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaudeber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/01 16:35:42 by aaudeber          #+#    #+#             */
-/*   Updated: 2023/06/07 11:20:39 by aaudeber         ###   ########.fr       */
+/*   Created: 2023/06/01 16:20:10 by aaudeber          #+#    #+#             */
+/*   Updated: 2023/06/01 16:28:57 by aaudeber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_sort(t_list **lst_a, t_list **lst_b)
+void	ft_print_lst(t_list *lst)
 {
-	//ft_radix_sort(lst_a, lst_b);
-	//ft_insertion_sort(lst_a, lst_b);
-	ft_turc_sort(lst_a, lst_b);
-	return (0);
+	ft_printf("////// \\\\\\\\\\\\ \n");
+	while (lst)
+	{
+		ft_printf("p_lst : %p => ", lst);
+		ft_printf("nb : %d | ", lst->nb);
+		ft_printf("index : %d\n", lst->index);
+		lst = lst->next;
+	}
 }

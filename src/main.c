@@ -6,22 +6,11 @@
 /*   By: aaudeber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 16:40:47 by aaudeber          #+#    #+#             */
-/*   Updated: 2023/05/28 16:40:19 by aaudeber         ###   ########.fr       */
+/*   Updated: 2023/06/01 16:30:21 by aaudeber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	ft_print_lst(t_list **lst)
-{
-	ft_printf("////// \\\\\\\\\\\\ \n");
-	while (*lst)
-	{
-		ft_printf("p_lst : %p => ", *lst);
-		ft_printf("nb : %d\n", (*lst)->nb);
-		*lst = (*lst)->next;
-	}
-}
 
 int	main(int argc, char **argv)
 {
@@ -58,14 +47,15 @@ int	main(int argc, char **argv)
 		//ft_lstrotate_reversed(&lst_a, ft_lstlast(lst_a), ft_lstsize(lst_a));
 
 		ft_printf("\n");
-		ft_printf("AAAA: %p\n", &lst_a);
-		ft_print_lst(&lst_a);
+		ft_printf("LST_A: %p\n", lst_a);
+		ft_print_lst(lst_a);
 		ft_printf("\n");
 		ft_printf("===========");
 		ft_printf("\n\n");
-		ft_printf("BBBB: %p\n", &lst_b);
-		ft_print_lst(&lst_b);
+		ft_printf("LST_B: %p\n", lst_b);
+		ft_print_lst(lst_b);
 	}
+
 	ft_printf("\n");
 	return (0);
 }

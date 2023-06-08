@@ -6,6 +6,10 @@ CFLAGS		= -Wall -Wextra
 SRCS		= src/main.c \
 			  src/rules.c \
 			  src/sort.c \
+			  src/radix_sort.c \
+			  src/insertion_sort.c \
+			  src/turc_sort.c \
+			  src/utils.c \
 			  src/ft_lstnew.c \
 			  src/ft_lstadd_front.c \
 			  src/ft_lstadd_back.c \
