@@ -6,7 +6,7 @@
 /*   By: aaudeber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 14:02:42 by aaudeber          #+#    #+#             */
-/*   Updated: 2023/06/08 12:23:05 by aaudeber         ###   ########.fr       */
+/*   Updated: 2023/06/08 17:23:02 by aaudeber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,18 +35,6 @@ int	ft_find_bit_max(t_list *lst)
 		lst = lst->next;
 	}
 	return (bit_len);
-}
-
-
-void	ft_print_lst_index(t_list *lst)
-{
-	//ft_printf("\n////// INDEX \\\\\\\\\\\\ \n");
-	while (lst)
-	{
-		//ft_printf("p_lst : %p => ", lst);
-		//ft_printf("index : %d\n", lst->index);
-		lst = lst->next;
-	}
 }
 
 void	ft_sort_and_index(t_list *lst)
@@ -84,10 +72,9 @@ void	ft_sort(t_list **lst_a, t_list **lst_b)
 	len = ft_lstsize(*lst_a);
 
 	ft_sort_and_index(*lst_a);
-	ft_print_lst_index(*lst_a);
+	//ft_print_lst_index(*lst_a);
 
 	bit_len = ft_find_bit_max(*lst_a);
-	//printf("\n?==%d==?\n", bit_len);
 	while (j <= bit_len)
 	{
 		i = 0;
@@ -103,7 +90,6 @@ void	ft_sort(t_list **lst_a, t_list **lst_b)
 		}
 		while (*lst_b)
 			ft_lstpush("pa", lst_b, lst_a);
-		//printf("\n");
 		j++;
 	}
 }
