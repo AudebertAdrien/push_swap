@@ -6,7 +6,7 @@
 /*   By: aaudeber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 10:32:45 by aaudeber          #+#    #+#             */
-/*   Updated: 2023/06/13 10:47:28 by aaudeber         ###   ########.fr       */
+/*   Updated: 2023/06/13 16:14:49 by aaudeber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,16 +70,16 @@ int	is_duplicate(t_list **lst)
 
 int	is_already_sorted(t_list **lst)
 {
-	t_list	*s1;
-	t_list	*next;
+	t_list	*l1;
+	t_list	*l2;
 
-	while ((*lst)->next)
+	l1 = *lst;
+	while (l1)
 	{
-		s1 = *lst;
-		next = (*lst)->next;
-		if (s1->nb > next->nb)
+		l2 = l1->next;
+		if (l1->nb > l2->nb)
 			return (0);
-		*lst = next;
+		l1 = l1->next;
 	}
 	return (1);
 }

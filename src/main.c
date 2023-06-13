@@ -6,11 +6,12 @@
 /*   By: aaudeber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 16:40:47 by aaudeber          #+#    #+#             */
-/*   Updated: 2023/06/13 10:47:00 by aaudeber         ###   ########.fr       */
+/*   Updated: 2023/06/13 16:34:38 by aaudeber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
 int	main(int argc, char **argv)
 {
 	int		i;
@@ -46,6 +47,8 @@ int	main(int argc, char **argv)
 			ft_error(IS_ALPHA);
 		nb = ft_atoi(tab[i]);
 		new = ft_lstnew(nb);
+		//ft_printf("new p : %p => ", new);
+		//ft_printf("nb : %d\n", new->nb);
 		ft_lstadd_back(&lst_a, new);
 		i++;
 	}
@@ -68,7 +71,7 @@ int	main(int argc, char **argv)
 	   ft_printf("\n\n");
 	   ft_printf("BBBB: %p\n", &lst_b);
 	   ft_print_lst(&lst_b);
-	 */
+	   */
 
 	//clean_program(&lst_a, tab);
 	ft_lstclear(&lst_a);
