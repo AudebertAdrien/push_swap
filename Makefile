@@ -6,11 +6,14 @@ CFLAGS		= -Wall -Wextra
 SRCS		= src/main.c \
 			  src/rules.c \
 			  src/sort.c \
+			  src/utils.c \
+			  src/error.c \
 			  src/ft_lstnew.c \
 			  src/ft_lstadd_front.c \
 			  src/ft_lstadd_back.c \
 			  src/ft_lstsize.c \
 			  src/ft_lstlast.c \
+			  src/ft_lstclear.c \
 
 INC			= -I./include -I./libft -I./printf
 
