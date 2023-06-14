@@ -6,13 +6,14 @@
 /*   By: aaudeber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 16:43:40 by aaudeber          #+#    #+#             */
-/*   Updated: 2023/06/13 15:29:59 by aaudeber         ###   ########.fr       */
+/*   Updated: 2023/06/14 18:48:11 by aaudeber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP
 # define PUSH_SWAP
 
+# define BUFFER_SIZE 100
 # define NOT_ENOUGH_ARGS "Error : Need at least a string '2 1 0...' or multiple argument!" 
 # define IS_ALPHA "Error : is alpha!"
 # define IS_DUPLICATE "Error : Duplicate value!"
@@ -20,6 +21,8 @@
 # define IS_OVERFLOW "Error : INT_MAX or INT_MIN!"
 
 # include <unistd.h>
+# include <stdlib.h>
+# include <stdio.h>
 # include <limits.h>
 
 # include "../libft/libft.h"

@@ -1,4 +1,5 @@
-NAME		= push_swap
+MAIN		= push_swap
+CHECKER		= checker
 
 CC			= gcc -g
 CFLAGS		= -Wall -Wextra
@@ -15,14 +16,19 @@ SRCS		= src/main.c \
 			  src/ft_lstlast.c \
 			  src/ft_lstclear.c \
 
+BONUS		= src/checker.c \
+
 INC			= -I./include -I./libft -I./printf
+LIBFT		= -Llibft -lft 
+PRINTF		= -Lprintf -lftprintf
 
 OBJ			= $(SRCS:src/%.c=obj/%.o)
+OBJ_BONUS	= $(BONUS:src/%.c=obj/%.o)
 
 obj/%.o: src/%.c create_obj_dir
 	@$(CC) $(CFLAGS) $(INC) -c $< -o $@
 
-all: create_obj_dir $(NAME) 
+all: create_obj_dir $(MAIN) 
 
 create_obj_dir :
 	@mkdir -p obj
@@ -33,9 +39,14 @@ make_libs:
 	@echo ✅ "Compile ft_printf\n"
 	@make re -s -C ./printf
 
-$(NAME): $(OBJ)
+$(MAIN): $(OBJ)
 	@echo ✅ "Compile push_swap\n"
-	@$(CC) $^ -o $@ $(INC) -Llibft -lft -Lprintf -lftprintf
+	@$(CC) $^ -o $@ $(INC) $(LIBFT) $(PRINTF)
+
+bonus:	$(OBJ_BONUS)
+	@echo ✅ "Compile checker\n"
+	@$(CC) $^ -o checker $(INC) $(LIBFT) $(PRINTF)
+ 
 
 clean_libs:
 	@echo ✅ "Clean libft\n"
@@ -49,7 +60,7 @@ clean:
 	@rm -rf obj/
 
 fclean: clean
-	@rm -f $(NAME)
+	@rm -f $(MAIN)
 
 re: fclean all
 
