@@ -17,6 +17,7 @@ SRCS		= src/main.c \
 			  src/ft_lstclear.c \
 
 BONUS		= src/checker.c \
+			  src/get_next_line.c \
 
 INC			= -I./include -I./libft -I./printf
 LIBFT		= -Llibft -lft 

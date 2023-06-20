@@ -6,7 +6,7 @@
 /*   By: aaudeber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 16:40:47 by aaudeber          #+#    #+#             */
-/*   Updated: 2023/06/13 16:34:38 by aaudeber         ###   ########.fr       */
+/*   Updated: 2023/06/20 14:12:52 by aaudeber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	main(int argc, char **argv)
 {
 	int		i;
-	int		nb;
+	long	nb;
 	t_list	*lst_a;
 	t_list	*lst_b;
 	t_list	*new;
@@ -43,9 +43,11 @@ int	main(int argc, char **argv)
 	i = 0;
 	while (tab[i])
 	{
-		if (is_alpha(tab[i]))
-			ft_error(IS_ALPHA);
+		if (is_valid_number(tab[i]))
+			ft_error(IS_NUMBER);
 		nb = ft_atoi(tab[i]);
+		if (is_overflow(nb))
+			ft_error(IS_OVERFLOW);
 		new = ft_lstnew(nb);
 		//ft_printf("new p : %p => ", new);
 		//ft_printf("nb : %d\n", new->nb);
@@ -53,8 +55,6 @@ int	main(int argc, char **argv)
 		i++;
 	}
 
-	if (is_overflow(&lst_a))
-		ft_error(IS_OVERFLOW);
 	if (is_duplicate(&lst_a))
 		ft_error(IS_DUPLICATE);
 	if (is_already_sorted(&lst_a))
@@ -71,7 +71,7 @@ int	main(int argc, char **argv)
 	   ft_printf("\n\n");
 	   ft_printf("BBBB: %p\n", &lst_b);
 	   ft_print_lst(&lst_b);
-	   */
+	  */
 
 	//clean_program(&lst_a, tab);
 	ft_lstclear(&lst_a);

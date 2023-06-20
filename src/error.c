@@ -6,7 +6,7 @@
 /*   By: aaudeber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 10:32:45 by aaudeber          #+#    #+#             */
-/*   Updated: 2023/06/13 16:14:49 by aaudeber         ###   ########.fr       */
+/*   Updated: 2023/06/20 14:12:31 by aaudeber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,33 +18,28 @@ void	ft_error(char *s)
 	exit(EXIT_FAILURE);	
 }
 
-int	is_alpha(char *s)
+int	is_valid_number(char *s)
 {
 	int	i;
 
 	i = 0;
+ 	if (s[0] == '-')
+		i++;
 	while (s[i])
 	{
-		if (ft_isalpha(s[i]))
+		if (!(ft_isdigit(s[i])))
 			return (1);
 		i++;
 	}
 	return (0);
 }
 
-int	is_overflow(t_list **lst)
+int	is_overflow(long nb)
 {
-	t_list *l1;
-
-	l1 = *lst;
-	while (l1)
-	{
-		if (l1->nb >= INT_MAX)
-			return (1);
-		if (l1->nb <= INT_MIN)
-			return (1);
-		l1 = l1->next;
-	}
+	if (nb > INT_MAX)
+		return (1);
+	if (nb < INT_MIN)
+		return (1);
 	return (0);
 }
 
@@ -70,14 +65,12 @@ int	is_duplicate(t_list **lst)
 
 int	is_already_sorted(t_list **lst)
 {
-	t_list	*l1;
-	t_list	*l2;
+	t_list *l1;
 
 	l1 = *lst;
-	while (l1)
+	while (l1->next)
 	{
-		l2 = l1->next;
-		if (l1->nb > l2->nb)
+		if (l1->nb > l1->next->nb)
 			return (0);
 		l1 = l1->next;
 	}

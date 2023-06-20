@@ -6,24 +6,17 @@
 /*   By: aaudeber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 16:08:21 by aaudeber          #+#    #+#             */
-/*   Updated: 2023/05/28 13:31:12 by aaudeber         ###   ########.fr       */
+/*   Updated: 2023/06/20 11:43:19 by aaudeber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-	DESCRIPTION
-	The  atoi()  function  converts the initial portion of the string
-	pointed to by nptr to int.
-	
-	RETURN VALUE
-       	The converted value.
-*/
+#include "libft.h"
 
 int	ft_atoi(const char *nptr)
 {
-	int	num;
-	int	sign;
-	int	i;
+	long	num;
+	int		sign;
+	int		i;
 
 	i = 0;
 	sign = 1;

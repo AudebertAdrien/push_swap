@@ -6,17 +6,17 @@
 /*   By: aaudeber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 17:37:18 by aaudeber          #+#    #+#             */
-/*   Updated: 2023/05/18 19:59:44 by aaudeber         ###   ########.fr       */
+/*   Updated: 2023/06/20 16:10:23 by aaudeber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <unistd.h>
 # include <stddef.h>
 # include <stdio.h>
 # include <string.h>
-# include <unistd.h>
 # include <stdlib.h>
 # include <bsd/string.h>
 
@@ -59,4 +59,5 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+
 #endif
