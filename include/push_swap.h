@@ -6,7 +6,7 @@
 /*   By: aaudeber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 16:43:40 by aaudeber          #+#    #+#             */
-/*   Updated: 2023/06/20 16:57:33 by aaudeber         ###   ########.fr       */
+/*   Updated: 2023/06/23 15:32:48 by aaudeber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 # define PUSH_SWAP
 
 # define BUFFER_SIZE 100
-# define NOT_ENOUGH_ARGS "Error : Need at least a string '2 1 0...' or multiple argument!" 
+# define ERROR "Error"
+# define EMPTY_STDIN "Error : Empty stdin!"
+# define NOT_ENOUGH_ARGS "Error : No argument!" 
 # define IS_NUMBER "Error : invalid number!"
 # define IS_DUPLICATE "Error : Duplicate value!"
 # define IS_VALID_NUMBER "Error : Need a number between -2147483648 to 2147483647!"
@@ -39,7 +41,6 @@ typedef struct s_list
 	unsigned int	index;
 	struct s_list	*next;
 }			t_list;
-
 
 int		ft_lstswap(char *cmd, t_list **lst, t_list *s1, t_list *s2);
 int		ft_lstpush(char *cmd, t_list **t1, t_list **t2);

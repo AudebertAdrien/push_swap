@@ -4,27 +4,30 @@ CHECKER		= checker
 CC			= gcc -g
 CFLAGS		= -Wall -Wextra
 
-SRCS		= src/main.c \
-			  src/rules.c \
-			  src/sort.c \
-			  src/utils.c \
-			  src/error.c \
-			  src/ft_lstnew.c \
-			  src/ft_lstadd_front.c \
-			  src/ft_lstadd_back.c \
-			  src/ft_lstsize.c \
-			  src/ft_lstlast.c \
-			  src/ft_lstclear.c \
+VPATH		= src
 
-BONUS		= src/checker.c \
-			  src/get_next_line.c \
+SRCS		= main.c \
+
+BONUS		= checker.c \
+			  get_next_line.c \
+
+UTILS		= rules.c \
+			  sort.c \
+			  utils.c \
+			  error.c \
+			  ft_lstnew.c \
+			  ft_lstadd_front.c \
+			  ft_lstadd_back.c \
+			  ft_lstsize.c \
+			  ft_lstlast.c \
+			  ft_lstclear.c \
 
 INC			= -I./include -I./libft -I./printf
 LIBFT		= -Llibft -lft 
 PRINTF		= -Lprintf -lftprintf
 
-OBJ			= $(SRCS:src/%.c=obj/%.o)
-OBJ_BONUS	= $(BONUS:src/%.c=obj/%.o)
+OBJ			= $(addprefix obj/, $(SRCS:.c=.o) $(UTILS:.c=.o))
+OBJ_BONUS	= $(addprefix obj/, $(BONUS:.c=.o) $(UTILS:.c=.o))
 
 obj/%.o: src/%.c create_obj_dir
 	@$(CC) $(CFLAGS) $(INC) -c $< -o $@
@@ -46,7 +49,7 @@ $(MAIN): $(OBJ)
 
 bonus:	$(OBJ_BONUS)
 	@echo ✅ "Compile checker\n"
-	@$(CC) $^ -o checker $(INC) $(LIBFT) $(PRINTF)
+	@$(CC) $^ -o $(CHECKER) $(INC) $(LIBFT) $(PRINTF)
  
 
 clean_libs:

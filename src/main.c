@@ -6,7 +6,7 @@
 /*   By: aaudeber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 16:40:47 by aaudeber          #+#    #+#             */
-/*   Updated: 2023/06/20 14:12:52 by aaudeber         ###   ########.fr       */
+/*   Updated: 2023/06/23 14:07:57 by aaudeber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,11 @@ int	main(int argc, char **argv)
 	if (argc < 2)
 		ft_error(NOT_ENOUGH_ARGS);
 	if (argc == 2)
+	{
 		tab = ft_split(argv[1], ' ');	
+		if (!tab[0])
+			ft_error(ERROR);
+	}
 	else
 	{
 		tab = ft_calloc(argc, sizeof(char *));

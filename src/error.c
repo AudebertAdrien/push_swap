@@ -6,7 +6,7 @@
 /*   By: aaudeber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 10:32:45 by aaudeber          #+#    #+#             */
-/*   Updated: 2023/06/20 14:12:31 by aaudeber         ###   ########.fr       */
+/*   Updated: 2023/06/23 15:40:51 by aaudeber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 void	ft_error(char *s)
 {
-	ft_printf("%s\n", s);
+	ft_putstr_fd(s, 1);
+	ft_putchar_fd('\n', 1);
 	exit(EXIT_FAILURE);	
 }
 
