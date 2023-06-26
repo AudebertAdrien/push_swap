@@ -51,7 +51,6 @@ bonus:	$(OBJ_BONUS)
 	@echo ✅ "Compile checker\n"
 	@$(CC) $^ -o $(CHECKER) $(INC) $(LIBFT) $(PRINTF)
  
-
 clean_libs:
 	@echo ✅ "Clean libft\n"
 	@make fclean -s -C ./libft
