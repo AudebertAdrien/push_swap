@@ -6,7 +6,7 @@
 /*   By: aaudeber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 16:40:47 by aaudeber          #+#    #+#             */
-/*   Updated: 2023/07/01 15:38:08 by aaudeber         ###   ########.fr       */
+/*   Updated: 2023/07/01 19:09:07 by aaudeber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,6 @@ int	main(int argc, char **argv)
 		tab = ft_split(argv[1], ' ');
 		if (!tab[1])
 			exit(EXIT_SUCCESS);
-		//if (!tab[!0])
-		//	ft_error(ERROR_MESSAGE);
 	}
 	else
 	{
@@ -63,8 +61,6 @@ int	main(int argc, char **argv)
 		ft_error(ERROR_MESSAGE);
 	if (is_already_sorted(&lst_a))
 		exit(EXIT_SUCCESS);
-	//	ft_error(ERROR_MESSAGE);
-
 
 	ft_sort(&lst_a, &lst_b);
 	ft_lstclear(&lst_a);

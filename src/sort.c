@@ -6,7 +6,7 @@
 /*   By: aaudeber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 14:02:42 by aaudeber          #+#    #+#             */
-/*   Updated: 2023/07/01 15:35:39 by aaudeber         ###   ########.fr       */
+/*   Updated: 2023/07/01 19:18:10 by aaudeber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,13 +82,13 @@ void	ft_sort(t_list **lst_a, t_list **lst_b)
 			s1 = *lst_a;
 			s2 = s1->next;
 			if (!(mask << j & s1->index))
-				ft_lstpush("pb", lst_a, lst_b);
+				ft_lstpush("pb", lst_a, lst_b, 1);
 			else
-				ft_lstrotate("ra", lst_a, s1, s2);
+				ft_lstrotate("ra", lst_a, s1, s2, 1);
 			i++;
 		}
 		while (*lst_b)
-			ft_lstpush("pa", lst_b, lst_a);
+			ft_lstpush("pa", lst_b, lst_a, 1);
 		j++;
 	}
 }

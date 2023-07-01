@@ -6,7 +6,7 @@
 /*   By: aaudeber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 18:07:15 by aaudeber          #+#    #+#             */
-/*   Updated: 2023/06/30 14:12:25 by aaudeber         ###   ########.fr       */
+/*   Updated: 2023/07/01 19:19:18 by aaudeber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,37 +20,37 @@ int	execute_cmd(char *cmd, t_list **lst_a, t_list **lst_b)
 	cmd_len = ft_strlen(cmd);
 
 	if (!ft_strncmp(cmd,"sa\n", cmd_len))
-		ft_lstswap(cmd, lst_a, *lst_a, (*lst_a)->next);
+		ft_lstswap(cmd, lst_a, *lst_a, (*lst_a)->next, 2);
 	if (!ft_strncmp(cmd,"sb\n", cmd_len))
-		ft_lstswap(cmd, lst_b, *lst_b, (*lst_b)->next);
+		ft_lstswap(cmd, lst_b, *lst_b, (*lst_b)->next, 2);
 	if (!ft_strncmp(cmd,"ss\n", cmd_len))
 	{
-		ft_lstswap("sa\n", lst_a, *lst_a, (*lst_a)->next);
-		ft_lstswap("sb\n", lst_b, *lst_b, (*lst_b)->next);
+		ft_lstswap("sa\n", lst_a, *lst_a, (*lst_a)->next, 2);
+		ft_lstswap("sb\n", lst_b, *lst_b, (*lst_b)->next, 2);
 	}
 
 	if (!ft_strncmp(cmd,"pa\n", cmd_len))
-		ft_lstpush(cmd, lst_b, lst_a);
+		ft_lstpush(cmd, lst_b, lst_a, 2);
 	if (!ft_strncmp(cmd,"pb\n", cmd_len))
-		ft_lstpush(cmd, lst_a, lst_b);
+		ft_lstpush(cmd, lst_a, lst_b, 2);
 	
 	if (!ft_strncmp(cmd,"ra\n", cmd_len))
-		ft_lstrotate(cmd, lst_a, *lst_a, (*lst_a)->next);
+		ft_lstrotate(cmd, lst_a, *lst_a, (*lst_a)->next, 2);
 	if (!ft_strncmp(cmd,"rb\n", cmd_len))
-		ft_lstrotate(cmd, lst_b, *lst_b, (*lst_b)->next);
+		ft_lstrotate(cmd, lst_b, *lst_b, (*lst_b)->next, 2);
 	if (!ft_strncmp(cmd,"rr\n", cmd_len))
 	{
-		ft_lstrotate("ra\n", lst_a, *lst_a, (*lst_a)->next);
-		ft_lstrotate("rb\n", lst_b, *lst_b, (*lst_b)->next);
+		ft_lstrotate("ra\n", lst_a, *lst_a, (*lst_a)->next, 2);
+		ft_lstrotate("rb\n", lst_b, *lst_b, (*lst_b)->next, 2);
 	}
 	if (!ft_strncmp(cmd,"rra\n", cmd_len))
-		ft_lstrotate_reversed(cmd, lst_a, ft_lstlast(*lst_a), ft_lstsize(*lst_a));
+		ft_lstrotate_reversed(cmd, lst_a, ft_lstlast(*lst_a), ft_lstsize(*lst_a), 2);
 	if (!ft_strncmp(cmd,"rrb\n", cmd_len))
-		ft_lstrotate_reversed(cmd, lst_b, ft_lstlast(*lst_b), ft_lstsize(*lst_b));
+		ft_lstrotate_reversed(cmd, lst_b, ft_lstlast(*lst_b), ft_lstsize(*lst_b), 2);
 	if (!ft_strncmp(cmd,"rrr\n", cmd_len))
 	{
-		ft_lstrotate_reversed(cmd, lst_a, ft_lstlast(*lst_a), ft_lstsize(*lst_a));
-		ft_lstrotate_reversed(cmd, lst_b, ft_lstlast(*lst_b), ft_lstsize(*lst_b));
+		ft_lstrotate_reversed(cmd, lst_a, ft_lstlast(*lst_a), ft_lstsize(*lst_a), 2);
+		ft_lstrotate_reversed(cmd, lst_b, ft_lstlast(*lst_b), ft_lstsize(*lst_b), 2);
 	}
 	return (1);
 }
@@ -114,8 +114,6 @@ int	main(int argc, char **argv)
 		execute_cmd(buf, &lst_a, &lst_b);
 		free(buf);
 	}
-
-	ft_print_lst(lst_a);
 
 	if(is_sorted(lst_a))
 		ft_printf("OK");
