@@ -6,7 +6,7 @@
 /*   By: aaudeber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 14:02:42 by aaudeber          #+#    #+#             */
-/*   Updated: 2023/06/13 16:35:33 by aaudeber         ###   ########.fr       */
+/*   Updated: 2023/07/01 15:35:39 by aaudeber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,6 @@ void	ft_sort(t_list **lst_a, t_list **lst_b)
 	len = ft_lstsize(*lst_a);
 
 	ft_sort_and_index(*lst_a);
-	//ft_print_lst_index(*lst_a);
 
 	bit_len = ft_find_bit_max(*lst_a);
 	while (j <= bit_len)

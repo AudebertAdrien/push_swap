@@ -6,7 +6,7 @@
 /*   By: aaudeber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 13:54:48 by aaudeber          #+#    #+#             */
-/*   Updated: 2023/06/08 11:48:26 by aaudeber         ###   ########.fr       */
+/*   Updated: 2023/07/01 15:36:26 by aaudeber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,11 @@ int	ft_lstswap(char *cmd, t_list **lst, t_list *s1, t_list *s2)
 int	ft_lstpush(char *cmd, t_list **t1,  t_list **t2)
 {
 	t_list	*tmp;
-	
+	int		cmd_l;
+
+	cmd_l = ft_strlen(cmd);
+	//if (!ft_strncmp(cmd, "pa\n", cmd_l))
+	//	ft_printf("HEL\n");
 	tmp = *t2;
 	*t2 = *t1;
 	*t1 = (*t1)->next;
