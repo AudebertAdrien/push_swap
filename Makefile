@@ -1,8 +1,8 @@
 MAIN		= push_swap
 CHECKER		= checker
 
-CC			= gcc -g
-CFLAGS		= -Wall -Wextra
+CC		= gcc -g
+CFLAGS		= -Wall -Wextra -Werror
 
 VPATH		= src
 
@@ -13,6 +13,7 @@ BONUS		= checker.c \
 
 UTILS		= rules.c \
 			  sort.c \
+			  low_stack.c \
 			  utils.c \
 			  error.c \
 			  ft_lstnew.c \
@@ -22,11 +23,11 @@ UTILS		= rules.c \
 			  ft_lstlast.c \
 			  ft_lstclear.c \
 
-INC			= -I./include -I./libft -I./printf
+INC		= -I./include -I./libft -I./printf
 LIBFT		= -Llibft -lft 
 PRINTF		= -Lprintf -lftprintf
 
-OBJ			= $(addprefix obj/, $(SRCS:.c=.o) $(UTILS:.c=.o))
+OBJ		= $(addprefix obj/, $(SRCS:.c=.o) $(UTILS:.c=.o))
 OBJ_BONUS	= $(addprefix obj/, $(BONUS:.c=.o) $(UTILS:.c=.o))
 
 obj/%.o: src/%.c create_obj_dir

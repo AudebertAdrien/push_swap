@@ -6,7 +6,7 @@
 /*   By: aaudeber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 16:43:40 by aaudeber          #+#    #+#             */
-/*   Updated: 2023/07/01 19:20:10 by aaudeber         ###   ########.fr       */
+/*   Updated: 2023/09/11 15:18:28 by motoko           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ int		ft_lstrotate(char *cmd, t_list **lst, t_list *s1, t_list *s2, int id);
 int		ft_lstrotate_reversed(char *cmd, t_list **lst, t_list *last, int size, int id);
 
 void	ft_sort(t_list **lst_a, t_list **lst_b);
+void	ft_sort_and_index(t_list *lst);
+int	ft_low_stack(t_list **lst_a, t_list **lst_b);
 
 void	ft_error(char *s);
 void	ft_print_lst(t_list *lst);
@@ -50,11 +52,11 @@ int		is_overflow(long nb);
 int		is_duplicate(t_list **lst);
 int		is_already_sorted(t_list **lst);
 
+int		ft_lstsize(t_list *lst);	
 t_list	*ft_lstnew(int nb);	
+t_list	*ft_lstlast(t_list *lst);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 void	ft_lstadd_back(t_list **lst, t_list *new);
-t_list	*ft_lstlast(t_list *lst);
-int		ft_lstsize(t_list *lst);	
 void	ft_lstclear(t_list **lst);
 
 #endif
