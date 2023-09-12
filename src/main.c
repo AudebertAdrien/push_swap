@@ -6,7 +6,7 @@
 /*   By: aaudeber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 16:40:47 by aaudeber          #+#    #+#             */
-/*   Updated: 2023/09/11 15:45:26 by motoko           ###   ########.fr       */
+/*   Updated: 2023/09/11 17:54:01 by motoko           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int	main(int argc, char **argv)
 		exit(EXIT_SUCCESS);
 
 	ft_sort_and_index(lst_a);
-	if (argc < 6)
+	if (argc < 7)
 		ft_low_stack(&lst_a, &lst_b);	
 	else
 		ft_sort(&lst_a, &lst_b);
