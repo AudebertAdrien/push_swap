@@ -6,7 +6,7 @@
 /*   By: aaudeber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 10:32:45 by aaudeber          #+#    #+#             */
-/*   Updated: 2023/09/12 20:02:27 by motoko           ###   ########.fr       */
+/*   Updated: 2023/09/13 14:33:32 by motoko           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_error(void **tab, t_list **lst, char *s)
 {
 	if (*lst)
 		ft_lstclear(lst);
-	if (*tab)
+	if (tab && *tab)
 		free_tab(tab);
 	if (s)
 		ft_printf("%s\n", s);

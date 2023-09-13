@@ -6,7 +6,7 @@
 /*   By: aaudeber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 16:40:47 by aaudeber          #+#    #+#             */
-/*   Updated: 2023/09/13 13:19:55 by motoko           ###   ########.fr       */
+/*   Updated: 2023/09/13 14:18:52 by motoko           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	main(int argc, char **argv)
 	lst_b = NULL;
 	tab = NULL;
 	if (argc < 2)
-		exit(EXIT_SUCCESS);
+		ft_error((void **)tab, &lst_a, NULL);
 	if (argc == 2)
 	{
 		tab = ft_split(argv[1], ' ');

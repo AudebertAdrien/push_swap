@@ -44,7 +44,7 @@ make_libs:
 	@echo ✅ "Compile ft_printf\n"
 	@make re -s -C ./printf
 
-$(MAIN): $(OBJ)
+$(MAIN): $(OBJ) 
 	@echo ✅ "Compile push_swap\n"
 	@$(CC) $^ -o $@ $(INC) $(LIBFT) $(PRINTF)
 
@@ -60,7 +60,7 @@ clean_libs:
 	
 clean: 
 	@echo ✅ "Clean push_swap\n"
-	@rm -rf $(OBJ)
+	@rm -rf $(OBJ) $(OBJ_BONUS)
 	@rm -rf obj/
 
 fclean: clean
