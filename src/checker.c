@@ -6,7 +6,7 @@
 /*   By: aaudeber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 18:07:15 by aaudeber          #+#    #+#             */
-/*   Updated: 2023/09/13 15:44:49 by motoko           ###   ########.fr       */
+/*   Updated: 2023/09/13 18:37:56 by motoko           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,30 +76,17 @@ int	execute_cmd(char *cmd, char **tab, t_list **lst_a, t_list **lst_b)
 	return (1);
 }
 
-int	main(int argc, char **argv)
+char	**create_tab(int argc, char **argv)
 {
 	int		i;
-	long	nb;
-	t_list	*lst_a;
-	t_list	*lst_b;
-	t_list	*new;
-	char	**tab;
-	char	*buf;
+	char		**tab;
 
-	nb = 0;
 	i = 0;
-	lst_a = NULL;
-	lst_b = NULL;
-	tab = NULL;
-	if (read(STDIN_FILENO, 0, 0) < 0)
-		ft_error((void **)tab, &lst_a, ERROR_MESSAGE);
-	if (argc < 2)
-		ft_error((void **)tab, &lst_a, NULL);
 	if (argc == 2)
 	{
 		tab = ft_split(argv[1], ' ');	
 		if (!tab[1])
-			ft_error((void **)tab, &lst_a, NULL);
+			ft_error((void **)tab, NULL, NULL);
 	}
 	else
 	{
@@ -111,21 +98,35 @@ int	main(int argc, char **argv)
 		}
 		tab[i] = NULL;
 	}
+	return (tab);
+}
+
+void	create_lst(char **tab, t_list **lst_a)
+{
+	int	i;
+	long		nb;
+	t_list	*new;
+
 	i = 0;
+	nb = 0;
 	while (tab[i])
 	{
 		if (is_valid_number(tab[i]))
-			ft_error((void **)tab, &lst_a, ERROR_MESSAGE);
+			ft_error((void **)tab, lst_a, ERROR_MESSAGE);
 		nb = ft_atoi(tab[i]);
 		if (is_overflow(nb))
-			ft_error((void **)tab, &lst_a, ERROR_MESSAGE);
+			ft_error((void **)tab, lst_a, ERROR_MESSAGE);
 		new = ft_lstnew(nb);
-		ft_lstadd_back(&lst_a, new);
+		ft_lstadd_back(lst_a, new);
 		i++;
 	}
+	if (is_duplicate(lst_a))
+		ft_error((void **)tab, lst_a, ERROR_MESSAGE);
+}
 
-	if (is_duplicate(&lst_a))
-		ft_error((void **)tab, &lst_a, ERROR_MESSAGE);
+void	read_and_process(char **tab, t_list **lst_a, t_list **lst_b)
+{
+	char	*buf;
 
 	while (1)
 	{
@@ -134,17 +135,32 @@ int	main(int argc, char **argv)
 			break ;
 		//if (!is_valid_rules(buf))
 		//	ft_error((void **)tab, &lst_a, ERROR_MESSAGE);
-		execute_cmd(buf, tab, &lst_a, &lst_b);
+		execute_cmd(buf, tab, lst_a, lst_b);
 		free(buf);
 	}
-
-	if(is_sorted(lst_a))
+	if(is_sorted(*lst_a))
 		ft_printf("OK");
 	else
 		ft_printf("KO");
+}
 
+int	main(int argc, char **argv)
+{
+	t_list	*lst_a;
+	t_list	*lst_b;
+	char	**tab;
+
+	lst_a = NULL;
+	lst_b = NULL;
+	tab = NULL;
+	if (read(STDIN_FILENO, 0, 0) < 0)
+		ft_error((void **)tab, &lst_a, ERROR_MESSAGE);
+	if (argc < 2)
+		ft_error((void **)tab, &lst_a, NULL);
+	tab = create_tab(argc, argv);
+	create_lst(tab, &lst_a);
+	read_and_process(tab, &lst_a, &lst_b);
 	ft_lstclear(&lst_a);
 	free_tab((void **)tab);
-
 	return (0);
 }

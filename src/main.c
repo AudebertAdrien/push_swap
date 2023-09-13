@@ -6,7 +6,7 @@
 /*   By: aaudeber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 16:40:47 by aaudeber          #+#    #+#             */
-/*   Updated: 2023/09/13 17:04:44 by motoko           ###   ########.fr       */
+/*   Updated: 2023/09/13 18:27:29 by motoko           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,11 @@ int	main(int argc, char **argv)
 	t_list	*lst_b;
 	char	**tab;
 
+	lst_a = NULL;
+	lst_b = NULL;
+	tab = NULL;
 	if (argc < 2)
-		exit(EXIT_FAILURE);
+		ft_error((void **)tab, &lst_a, NULL);
 	tab = create_tab(argc, argv);
 	create_lst(tab, &lst_a);
 	ft_sort_and_index(lst_a);
