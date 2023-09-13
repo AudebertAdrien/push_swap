@@ -6,7 +6,7 @@
 /*   By: aaudeber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 18:07:15 by aaudeber          #+#    #+#             */
-/*   Updated: 2023/07/01 19:19:18 by aaudeber         ###   ########.fr       */
+/*   Updated: 2023/09/12 18:00:29 by motoko           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,7 +121,7 @@ int	main(int argc, char **argv)
 		ft_printf("KO");
 
 	ft_lstclear(&lst_a);
-	free(tab);
+	free_tab(tab);
 
 	return (0);
 }

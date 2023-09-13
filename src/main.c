@@ -6,7 +6,7 @@
 /*   By: aaudeber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 16:40:47 by aaudeber          #+#    #+#             */
-/*   Updated: 2023/09/11 17:54:01 by motoko           ###   ########.fr       */
+/*   Updated: 2023/09/13 13:19:55 by motoko           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,14 @@ int	main(int argc, char **argv)
 	{
 		tab = ft_split(argv[1], ' ');
 		if (!tab[1])
-			exit(EXIT_SUCCESS);
+			ft_error((void **)tab, &lst_a, NULL);
 	}
 	else
 	{
 		tab = ft_calloc(argc, sizeof(char *));
 		while (i < argc - 1)
 		{
-			tab[i] = argv[i + 1];
+			tab[i] = ft_strdup(argv[i + 1]);
 			i++;
 		}
 		tab[i] = NULL;
@@ -48,19 +48,19 @@ int	main(int argc, char **argv)
 	while (tab[i])
 	{
 		if (is_valid_number(tab[i]))
-			ft_error(ERROR_MESSAGE);
+			ft_error((void **)tab, &lst_a, ERROR_MESSAGE);
 		nb = ft_atoi(tab[i]);
 		if (is_overflow(nb))
-			ft_error(ERROR_MESSAGE);
+			ft_error((void **)tab, &lst_a, ERROR_MESSAGE);
 		new = ft_lstnew(nb);
 		ft_lstadd_back(&lst_a, new);
 		i++;
 	}
 
 	if (is_duplicate(&lst_a))
-		ft_error(ERROR_MESSAGE);
+		ft_error((void **)tab, &lst_a, ERROR_MESSAGE);
 	if (is_already_sorted(&lst_a))
-		exit(EXIT_SUCCESS);
+		ft_error((void **)tab, &lst_a, NULL);
 
 	ft_sort_and_index(lst_a);
 	if (argc < 7)
@@ -68,6 +68,6 @@ int	main(int argc, char **argv)
 	else
 		ft_sort(&lst_a, &lst_b);
 	ft_lstclear(&lst_a);
-	free(tab);
+	free_tab((void **)tab);
 	return (0);
 }

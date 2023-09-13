@@ -6,7 +6,7 @@
 /*   By: motoko <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 14:17:31 by motoko            #+#    #+#             */
-/*   Updated: 2023/09/12 17:32:19 by motoko           ###   ########.fr       */
+/*   Updated: 2023/09/12 17:41:57 by motoko           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,6 @@ int	is_max(t_list *lst_a)
 			max = lst_a->nb;
 		lst_a = lst_a->next;
 	}
-	printf("max %d\n", max);
 	return (max);
 }
 
@@ -72,13 +71,14 @@ int	find_pos(t_list **lst_a, t_list **lst_b)
 {
 	while (*lst_a && *lst_b)
 	{
-		if ((*lst_a)->nb == is_max(*lst_a))
+	
+		if ((*lst_b)->index < (*lst_a)->index)
+			ft_lstpush("pa", lst_b, lst_a, 1);	
+		else if ((*lst_a)->nb == is_max(*lst_a))
 		{
 			ft_lstrotate("ra", lst_a, *lst_a, (*lst_a)->next, 1);
 			ft_lstpush("pa", lst_b, lst_a, 1);	
 		}
-		else if ((*lst_b)->index < (*lst_a)->index)
-			ft_lstpush("pa", lst_b, lst_a, 1);	
 		else
 			ft_lstrotate("ra", lst_a, *lst_a, (*lst_a)->next, 1);
 	}
@@ -92,8 +92,12 @@ int	ft_five(t_list **lst_a, t_list **lst_b)
 	ft_three(lst_a);
 	sort_b(lst_b);
 	find_pos(lst_a, lst_b);
-	ft_print_lst(*lst_a);
-	ft_print_lst(*lst_b);
+	while (!is_sorted(*lst_a))
+	{
+		ft_lstrotate("ra", lst_a, *lst_a, (*lst_a)->next, 1);
+	}
+	//ft_print_lst(*lst_a);
+	//ft_print_lst(*lst_b);
 	return (0);
 }
 

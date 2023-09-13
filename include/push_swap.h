@@ -6,7 +6,7 @@
 /*   By: aaudeber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 16:43:40 by aaudeber          #+#    #+#             */
-/*   Updated: 2023/09/11 15:18:28 by motoko           ###   ########.fr       */
+/*   Updated: 2023/09/12 19:28:49 by motoko           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,8 @@ void	ft_sort(t_list **lst_a, t_list **lst_b);
 void	ft_sort_and_index(t_list *lst);
 int	ft_low_stack(t_list **lst_a, t_list **lst_b);
 
-void	ft_error(char *s);
+void	free_tab(void **tab);
+void	ft_error(void **tab, t_list **lst, char *s);
 void	ft_print_lst(t_list *lst);
 void	ft_print_lst_index(t_list *lst);
 
