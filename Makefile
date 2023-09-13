@@ -2,7 +2,7 @@ MAIN		= push_swap
 CHECKER		= checker
 
 CC		= gcc -g
-CFLAGS		= -Wall -Wextra
+CFLAGS		= -Wall -Wextra -Werror
 
 VPATH		= src
 

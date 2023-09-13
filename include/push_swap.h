@@ -6,7 +6,7 @@
 /*   By: aaudeber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 16:43:40 by aaudeber          #+#    #+#             */
-/*   Updated: 2023/09/12 19:28:49 by motoko           ###   ########.fr       */
+/*   Updated: 2023/09/13 16:43:40 by motoko           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,14 +38,12 @@ int		ft_lstpush(char *cmd, t_list **t1, t_list **t2, int id);
 int		ft_lstrotate(char *cmd, t_list **lst, t_list *s1, t_list *s2, int id);
 int		ft_lstrotate_reversed(char *cmd, t_list **lst, t_list *last, int size, int id);
 
+int	ft_low_stack(t_list **lst_a, t_list **lst_b);
 void	ft_sort(t_list **lst_a, t_list **lst_b);
 void	ft_sort_and_index(t_list *lst);
-int	ft_low_stack(t_list **lst_a, t_list **lst_b);
 
 void	free_tab(void **tab);
 void	ft_error(void **tab, t_list **lst, char *s);
-void	ft_print_lst(t_list *lst);
-void	ft_print_lst_index(t_list *lst);
 
 int		is_sorted(t_list *lst);
 int		is_valid_number(char *s);
