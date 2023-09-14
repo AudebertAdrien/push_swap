@@ -6,7 +6,7 @@
 /*   By: motoko <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 10:31:38 by motoko            #+#    #+#             */
-/*   Updated: 2023/09/14 16:24:54 by motoko           ###   ########.fr       */
+/*   Updated: 2023/09/14 17:35:45 by motoko           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,13 @@ void	execute_cmd_2(char *cmd, char **tab, t_list **lst_a, t_list **lst_b)
 		ft_lstrotate("rb\n", lst_b, *lst_b, (*lst_b)->next, 2);
 	}
 	else if (!ft_strncmp(cmd,"rra\n", cmd_len))
-		ft_lstrotate_reversed(cmd, lst_a, ft_lstlast(*lst_a), ft_lstsize(*lst_a), 2);
+		ft_lstrotate_r(cmd, lst_a, ft_lstlast(*lst_a), ft_lstsize(*lst_a), 2);
 	else if (!ft_strncmp(cmd,"rrb\n", cmd_len))
-		ft_lstrotate_reversed(cmd, lst_b, ft_lstlast(*lst_b), ft_lstsize(*lst_b), 2);
+		ft_lstrotate_r(cmd, lst_b, ft_lstlast(*lst_b), ft_lstsize(*lst_b), 2);
 	else if (!ft_strncmp(cmd,"rrr\n", cmd_len))
 	{
-		ft_lstrotate_reversed(cmd, lst_a, ft_lstlast(*lst_a), ft_lstsize(*lst_a), 2);
-		ft_lstrotate_reversed(cmd, lst_b, ft_lstlast(*lst_b), ft_lstsize(*lst_b), 2);
+		ft_lstrotate_r(cmd, lst_a, ft_lstlast(*lst_a), ft_lstsize(*lst_a), 2);
+		ft_lstrotate_r(cmd, lst_b, ft_lstlast(*lst_b), ft_lstsize(*lst_b), 2);
 	}
 	else
 	{

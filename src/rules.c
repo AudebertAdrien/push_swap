@@ -6,7 +6,7 @@
 /*   By: aaudeber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 13:54:48 by aaudeber          #+#    #+#             */
-/*   Updated: 2023/09/13 18:25:43 by motoko           ###   ########.fr       */
+/*   Updated: 2023/09/14 17:34:17 by motoko           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int	ft_lstrotate(char *cmd, t_list **lst, t_list *s1, t_list *s2, int id)
 	return (1);
 }
 
-int	ft_lstrotate_reversed(char *cmd, t_list **lst, t_list *last, int size, int id)
+int	ft_lstrotate_r(char *cmd, t_list **lst, t_list *last, int size, int id)
 {
 	int	i;
 	t_list	*tmp;
