@@ -6,7 +6,7 @@
 /*   By: motoko <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 14:17:31 by motoko            #+#    #+#             */
-/*   Updated: 2023/09/14 16:46:08 by aaudeber         ###   ########.fr       */
+/*   Updated: 2023/09/14 17:32:56 by aaudeber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	ft_three(t_list **lst_a)
 	if (n1->index > n2->index && n1->index > n3->index && n2->index > n3->index)
 	{
 		ft_lstswap("sa", lst_a, n1, n2, 1);
-		ft_lstrotate_reversed("rra", lst_a, ft_lstlast(*lst_a), ft_lstsize(*lst_a), 1);
+		ft_lstrotate_r("rra", lst_a, ft_lstlast(*n1), ft_lstsize(*n1), 1);
 	}
 	if (n1->index > n2->index && n1->index > n3->index && n2->index < n3->index)
 		ft_lstrotate("ra", lst_a, n1, n2, 1);
@@ -36,7 +36,7 @@ int	ft_three(t_list **lst_a)
 		ft_lstrotate("ra", lst_a, *lst_a, (*lst_a)->next, 1);
 	}
 	if (n1->index < n2->index && n1->index > n3->index && n2->index > n3->index)
-		ft_lstrotate_reversed("rra", lst_a, ft_lstlast(*lst_a), ft_lstsize(*lst_a), 1);
+		ft_lstrotate_r("rra", lst_a, ft_lstlast(*lst_a), ft_lstsize(*lst_a), 1);
 	return (0);
 }
 
