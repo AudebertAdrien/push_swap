@@ -6,14 +6,14 @@
 /*   By: aaudeber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 16:43:40 by aaudeber          #+#    #+#             */
-/*   Updated: 2023/09/13 16:43:40 by motoko           ###   ########.fr       */
+/*   Updated: 2023/09/14 15:00:51 by motoko           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP
 # define PUSH_SWAP
 
-# define BUFFER_SIZE 100
+# define BUFFER_SIZE 1
 # define ERROR_MESSAGE "Error"
 
 # include <unistd.h>
@@ -58,4 +58,6 @@ void	ft_lstadd_front(t_list **lst, t_list *new);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstclear(t_list **lst);
 
+void	read_and_process(char **tab, t_list **lst_a, t_list **lst_b);
+void	execute_cmd(char *cmd, char **tab, t_list **lst_a, t_list **lst_b);
 #endif
