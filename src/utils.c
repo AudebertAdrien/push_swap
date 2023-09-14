@@ -6,7 +6,7 @@
 /*   By: aaudeber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 15:28:01 by aaudeber          #+#    #+#             */
-/*   Updated: 2023/09/13 16:45:46 by motoko           ###   ########.fr       */
+/*   Updated: 2023/09/14 16:39:23 by aaudeber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,13 @@ void	free_tab(void **tab)
 
 void	ft_sort_and_index(t_list *lst)
 {
-	t_list *l1;
-	t_list *l2;
+	t_list	*l1;
+	t_list	*l2;
 
 	l1 = lst;
 	while (l1)
 	{
-		l1->index = 1;	
+		l1->index = 1;
 		l2 = lst;
 		while (l2)
 		{

@@ -6,7 +6,7 @@
 /*   By: aaudeber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 16:56:24 by aaudeber          #+#    #+#             */
-/*   Updated: 2023/09/14 16:11:26 by motoko           ###   ########.fr       */
+/*   Updated: 2023/09/14 16:51:17 by aaudeber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ char	*free_and_join(char *stash, char *buf)
 
 char	*ft_clean_stash(char *stash)
 {
-	 int		len;
-	char		*new_stash;
+	int		len;
+	char	*new_stash;
 
 	new_stash = NULL;
 	if (!stash)

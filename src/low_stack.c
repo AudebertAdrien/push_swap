@@ -6,7 +6,7 @@
 /*   By: motoko <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 14:17:31 by motoko            #+#    #+#             */
-/*   Updated: 2023/09/14 17:33:32 by motoko           ###   ########.fr       */
+/*   Updated: 2023/09/14 17:37:41 by motoko           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ int	ft_three(t_list **lst_a)
 
 int	sort_b(t_list **lst_b)
 {
-	t_list *n1;
-	t_list *n2;
+	t_list	*n1;
+	t_list	*n2;
 
 	n1 = *lst_b;
 	n2 = (*lst_b)->next;
@@ -72,13 +72,12 @@ int	sort_4_and_5(t_list **lst_a, t_list **lst_b)
 {
 	while (*lst_a && *lst_b)
 	{
-	
 		if ((*lst_b)->index < (*lst_a)->index)
-			ft_lstpush("pa", lst_b, lst_a, 1);	
+			ft_lstpush("pa", lst_b, lst_a, 1);
 		else if ((*lst_a)->nb == is_max(*lst_a))
 		{
 			ft_lstrotate("ra", lst_a, *lst_a, (*lst_a)->next, 1);
-			ft_lstpush("pa", lst_b, lst_a, 1);	
+			ft_lstpush("pa", lst_b, lst_a, 1);
 		}
 		else
 			ft_lstrotate("ra", lst_a, *lst_a, (*lst_a)->next, 1);
@@ -90,17 +89,16 @@ int	ft_low_stack(t_list **lst_a, t_list **lst_b)
 {
 	if (ft_lstsize(*lst_a) == 3)
 		ft_three(lst_a);
-	if (ft_lstsize(*lst_a) == 4 || ft_lstsize(*lst_a) == 5 )
+	if (ft_lstsize(*lst_a) == 4 || ft_lstsize(*lst_a) == 5)
 	{
 		if (ft_lstsize(*lst_a) == 5)
-			ft_lstpush("pb", lst_a, lst_b, 1);	
-		ft_lstpush("pb", lst_a, lst_b, 1);	
+			ft_lstpush("pb", lst_a, lst_b, 1);
+		ft_lstpush("pb", lst_a, lst_b, 1);
 		ft_three(lst_a);
 		sort_b(lst_b);
 		sort_4_and_5(lst_a, lst_b);
 		while (!is_sorted(*lst_a))
 			ft_lstrotate("ra", lst_a, *lst_a, (*lst_a)->next, 1);
-
 	}
 	return (0);
 }

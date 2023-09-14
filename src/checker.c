@@ -6,7 +6,7 @@
 /*   By: aaudeber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 18:07:15 by aaudeber          #+#    #+#             */
-/*   Updated: 2023/09/14 16:23:13 by motoko           ###   ########.fr       */
+/*   Updated: 2023/09/14 16:50:50 by aaudeber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 char	**create_tab(int argc, char **argv)
 {
 	int		i;
-	char		**tab;
+	char	**tab;
 
 	i = 0;
 	if (argc == 2)
 	{
-		tab = ft_split(argv[1], ' ');	
+		tab = ft_split(argv[1], ' ');
 		if (!tab[1])
 			ft_error((void **)tab, NULL, NULL, NULL);
 	}
@@ -39,8 +39,8 @@ char	**create_tab(int argc, char **argv)
 
 void	create_lst(char **tab, t_list **lst_a, t_list **lst_b)
 {
-	int	i;
-	long		nb;
+	int		i;
+	long	nb;
 	t_list	*new;
 
 	i = 0;

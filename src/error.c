@@ -6,7 +6,7 @@
 /*   By: aaudeber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 10:32:45 by aaudeber          #+#    #+#             */
-/*   Updated: 2023/09/14 16:22:33 by motoko           ###   ########.fr       */
+/*   Updated: 2023/09/14 16:53:08 by aaudeber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_error(void **tab, t_list **lst_a, t_list **lst_b, char *s)
 		free_tab(tab);
 	if (s)
 		ft_printf("%s\n", s);
-	exit(EXIT_FAILURE);	
+	exit(EXIT_FAILURE);
 }
 
 int	is_valid_number(char *s)
@@ -30,7 +30,7 @@ int	is_valid_number(char *s)
 	int	i;
 
 	i = 0;
- 	if (s[0] == '-')
+	if (s[0] == '-')
 		i++;
 	while (s[i])
 	{
@@ -52,8 +52,8 @@ int	is_overflow(long nb)
 
 int	is_duplicate(t_list **lst)
 {
-	t_list *l1;
-	t_list *l2;
+	t_list	*l1;
+	t_list	*l2;
 
 	l1 = *lst;
 	while (l1)
@@ -72,7 +72,7 @@ int	is_duplicate(t_list **lst)
 
 int	is_already_sorted(t_list **lst)
 {
-	t_list *l1;
+	t_list	*l1;
 
 	l1 = *lst;
 	while (l1->next)

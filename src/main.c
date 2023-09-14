@@ -6,7 +6,7 @@
 /*   By: aaudeber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 16:40:47 by aaudeber          #+#    #+#             */
-/*   Updated: 2023/09/14 16:22:09 by motoko           ###   ########.fr       */
+/*   Updated: 2023/09/14 16:43:09 by aaudeber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	**create_tab(int argc, char **argv)
 {
-	char 	**tab;
-	int	i;
+	char	**tab;
+	int		i;
 
 	i = 0;
 	if (argc == 2)
@@ -39,7 +39,7 @@ char	**create_tab(int argc, char **argv)
 
 void	create_lst(char **tab, t_list **lst_a, t_list **lst_b)
 {
-	int	i;
+	int		i;
 	long	nb;
 	t_list	*new;
 
@@ -77,7 +77,7 @@ int	main(int argc, char **argv)
 	create_lst(tab, &lst_a, &lst_b);
 	ft_sort_and_index(lst_a);
 	if (argc < 7)
-		ft_low_stack(&lst_a, &lst_b);	
+		ft_low_stack(&lst_a, &lst_b);
 	else
 		ft_sort(&lst_a, &lst_b);
 	ft_lstclear(&lst_a);

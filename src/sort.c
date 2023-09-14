@@ -6,7 +6,7 @@
 /*   By: aaudeber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 14:02:42 by aaudeber          #+#    #+#             */
-/*   Updated: 2023/09/13 18:17:08 by motoko           ###   ########.fr       */
+/*   Updated: 2023/09/14 16:40:12 by aaudeber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ int	ft_find_bit_max(t_list *lst)
 
 void	radix(t_list **lst_a, t_list **lst_b, int len, int bit_len)
 {
-	int	i;
-	int	j;
+	int		i;
+	int		j;
 	t_list	*s1;
 	t_list	*s2;
 
@@ -62,7 +62,6 @@ void	radix(t_list **lst_a, t_list **lst_b, int len, int bit_len)
 			ft_lstpush("pa", lst_b, lst_a, 1);
 		i++;
 	}
-
 }
 
 void	ft_sort(t_list **lst_a, t_list **lst_b)
