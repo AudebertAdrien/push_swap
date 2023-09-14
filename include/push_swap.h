@@ -6,14 +6,14 @@
 /*   By: aaudeber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 16:43:40 by aaudeber          #+#    #+#             */
-/*   Updated: 2023/09/14 15:00:51 by motoko           ###   ########.fr       */
+/*   Updated: 2023/09/14 16:17:17 by motoko           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP
 # define PUSH_SWAP
 
-# define BUFFER_SIZE 1
+# define BUFFER_SIZE 1024
 # define ERROR_MESSAGE "Error"
 
 # include <unistd.h>
@@ -43,7 +43,7 @@ void	ft_sort(t_list **lst_a, t_list **lst_b);
 void	ft_sort_and_index(t_list *lst);
 
 void	free_tab(void **tab);
-void	ft_error(void **tab, t_list **lst, char *s);
+void	ft_error(void **tab, t_list **lst_a,  t_list **lst_b, char *s);
 
 int		is_sorted(t_list *lst);
 int		is_valid_number(char *s);

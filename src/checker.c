@@ -6,7 +6,7 @@
 /*   By: aaudeber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 18:07:15 by aaudeber          #+#    #+#             */
-/*   Updated: 2023/09/14 10:49:05 by motoko           ###   ########.fr       */
+/*   Updated: 2023/09/14 16:23:13 by motoko           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	**create_tab(int argc, char **argv)
 	{
 		tab = ft_split(argv[1], ' ');	
 		if (!tab[1])
-			ft_error((void **)tab, NULL, NULL);
+			ft_error((void **)tab, NULL, NULL, NULL);
 	}
 	else
 	{
@@ -37,7 +37,7 @@ char	**create_tab(int argc, char **argv)
 	return (tab);
 }
 
-void	create_lst(char **tab, t_list **lst_a)
+void	create_lst(char **tab, t_list **lst_a, t_list **lst_b)
 {
 	int	i;
 	long		nb;
@@ -48,16 +48,16 @@ void	create_lst(char **tab, t_list **lst_a)
 	while (tab[i])
 	{
 		if (is_valid_number(tab[i]))
-			ft_error((void **)tab, lst_a, ERROR_MESSAGE);
+			ft_error((void **)tab, lst_a, lst_b, ERROR_MESSAGE);
 		nb = ft_atoi(tab[i]);
 		if (is_overflow(nb))
-			ft_error((void **)tab, lst_a, ERROR_MESSAGE);
+			ft_error((void **)tab, lst_a, lst_b, ERROR_MESSAGE);
 		new = ft_lstnew(nb);
 		ft_lstadd_back(lst_a, new);
 		i++;
 	}
 	if (is_duplicate(lst_a))
-		ft_error((void **)tab, lst_a, ERROR_MESSAGE);
+		ft_error((void **)tab, lst_a, lst_b, ERROR_MESSAGE);
 }
 
 int	main(int argc, char **argv)
@@ -70,11 +70,11 @@ int	main(int argc, char **argv)
 	lst_b = NULL;
 	tab = NULL;
 	if (read(STDIN_FILENO, 0, 0) < 0)
-		ft_error((void **)tab, &lst_a, ERROR_MESSAGE);
+		ft_error((void **)tab, &lst_a, &lst_b, ERROR_MESSAGE);
 	if (argc < 3)
-		ft_error((void **)tab, &lst_a, NULL);
+		ft_error((void **)tab, &lst_a, &lst_b, NULL);
 	tab = create_tab(argc, argv);
-	create_lst(tab, &lst_a);
+	create_lst(tab, &lst_a, &lst_b);
 	read_and_process(tab, &lst_a, &lst_b);
 	ft_lstclear(&lst_a);
 	free_tab((void **)tab);

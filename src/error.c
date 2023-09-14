@@ -6,16 +6,18 @@
 /*   By: aaudeber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 10:32:45 by aaudeber          #+#    #+#             */
-/*   Updated: 2023/09/13 14:33:32 by motoko           ###   ########.fr       */
+/*   Updated: 2023/09/14 16:22:33 by motoko           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_error(void **tab, t_list **lst, char *s)
+void	ft_error(void **tab, t_list **lst_a, t_list **lst_b, char *s)
 {
-	if (*lst)
-		ft_lstclear(lst);
+	if (*lst_a)
+		ft_lstclear(lst_a);
+	if (*lst_b)
+		ft_lstclear(lst_b);
 	if (tab && *tab)
 		free_tab(tab);
 	if (s)

@@ -6,7 +6,7 @@
 /*   By: motoko <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 10:31:38 by motoko            #+#    #+#             */
-/*   Updated: 2023/09/14 15:05:21 by motoko           ###   ########.fr       */
+/*   Updated: 2023/09/14 16:24:54 by motoko           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	execute_cmd_2(char *cmd, char **tab, t_list **lst_a, t_list **lst_b)
 	{
 		free(cmd);
 		cmd = NULL;
-		ft_error((void **)tab, lst_a, ERROR_MESSAGE);
+		ft_error((void **)tab, lst_a, lst_b, ERROR_MESSAGE);
 	}
 }
 
@@ -79,9 +79,6 @@ void	read_and_process(char **tab, t_list **lst_a, t_list **lst_b)
 		free(buf);
 		buf = NULL;
 	}
-	
-	
-
 	if(is_sorted(*lst_a))
 		ft_printf("OK");
 	else
