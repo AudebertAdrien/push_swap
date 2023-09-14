@@ -13,6 +13,7 @@ BONUS		= checker.c \
 			  get_next_line.c \
 
 UTILS		= rules.c \
+			  rules_part2.c \
 			  sort.c \
 			  low_stack.c \
 			  utils.c \

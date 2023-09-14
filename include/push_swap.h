@@ -6,7 +6,7 @@
 /*   By: aaudeber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 16:43:40 by aaudeber          #+#    #+#             */
-/*   Updated: 2023/09/14 16:17:17 by motoko           ###   ########.fr       */
+/*   Updated: 2023/09/14 18:39:38 by aaudeber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,14 @@ typedef struct s_list
 	struct s_list	*next;
 }			t_list;
 
-int		ft_lstswap(char *cmd, t_list **lst, t_list *s1, t_list *s2, int id);
-int		ft_lstpush(char *cmd, t_list **t1, t_list **t2, int id);
-int		ft_lstrotate(char *cmd, t_list **lst, t_list *s1, t_list *s2, int id);
-int		ft_lstrotate_reversed(char *cmd, t_list **lst, t_list *last, int size, int id);
+int		ft_lstswap_a(t_list **lst, t_list *s1, t_list *s2, int id);
+int		ft_lstswap_b(t_list **lst, t_list *s1, t_list *s2, int id);
+int		ft_lstpush_a(t_list **t1, t_list **t2, int id);
+int		ft_lstpush_b(t_list **t1, t_list **t2, int id);
+int		ft_lstrotate_a(t_list **lst, t_list *s1, t_list *s2, int id);
+int		ft_lstrotate_b(t_list **lst, t_list *s1, t_list *s2, int id);
+int		ft_lstrotate_ra(t_list **lst, t_list *last, int size, int id);
+int		ft_lstrotate_rb(t_list **lst, t_list *last, int size, int id);
 
 int	ft_low_stack(t_list **lst_a, t_list **lst_b);
 void	ft_sort(t_list **lst_a, t_list **lst_b);

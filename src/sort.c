@@ -6,7 +6,7 @@
 /*   By: aaudeber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 14:02:42 by aaudeber          #+#    #+#             */
-/*   Updated: 2023/09/14 16:40:12 by aaudeber         ###   ########.fr       */
+/*   Updated: 2023/09/14 18:28:19 by aaudeber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,13 +53,13 @@ void	radix(t_list **lst_a, t_list **lst_b, int len, int bit_len)
 			s1 = *lst_a;
 			s2 = (*lst_a)->next;
 			if (!(1 << i & s1->index))
-				ft_lstpush("pb", lst_a, lst_b, 1);
+				ft_lstpush_b(lst_a, lst_b, 1);
 			else
-				ft_lstrotate("ra", lst_a, s1, s2, 1);
+				ft_lstrotate_a(lst_a, s1, s2, 1);
 			j++;
 		}
 		while (*lst_b)
-			ft_lstpush("pa", lst_b, lst_a, 1);
+			ft_lstpush_a(lst_b, lst_a, 1);
 		i++;
 	}
 }
