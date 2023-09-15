@@ -6,7 +6,7 @@
 /*   By: aaudeber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 18:07:15 by aaudeber          #+#    #+#             */
-/*   Updated: 2023/09/14 16:50:50 by aaudeber         ###   ########.fr       */
+/*   Updated: 2023/09/15 15:05:35 by motoko           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,9 @@ int	main(int argc, char **argv)
 	t_list	*lst_b;
 	char	**tab;
 
+	//lst_b = (t_list *)malloc(sizeof(t_list));
+	//if (!lst_b)	
+	//	exit(EXIT_FAILURE);
 	lst_a = NULL;
 	lst_b = NULL;
 	tab = NULL;
@@ -77,6 +80,7 @@ int	main(int argc, char **argv)
 	create_lst(tab, &lst_a, &lst_b);
 	read_and_process(tab, &lst_a, &lst_b);
 	ft_lstclear(&lst_a);
+	ft_lstclear(&lst_b);
 	free_tab((void **)tab);
 	return (0);
 }
