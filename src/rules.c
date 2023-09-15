@@ -6,7 +6,7 @@
 /*   By: aaudeber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 13:54:48 by aaudeber          #+#    #+#             */
-/*   Updated: 2023/09/15 15:22:07 by motoko           ###   ########.fr       */
+/*   Updated: 2023/09/15 16:30:03 by motoko           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,13 @@ int	ft_lstpush_a(t_list **t1, t_list **t2, int id)
 {
 	t_list	*tmp;
 
-	tmp = *t2;
-	*t2 = *t1;
-	*t1 = (*t1)->next;
-	(*t2)->next = tmp;
+	if (*t1)
+	{
+		tmp = *t2;
+		*t2 = *t1;
+		*t1 = (*t1)->next;
+		(*t2)->next = tmp;
+	}
 	if (id == 1)
 		ft_printf("pa\n");
 	return (1);
@@ -49,10 +52,13 @@ int	ft_lstpush_b(t_list **t1, t_list **t2, int id)
 {
 	t_list	*tmp;
 
-	tmp = *t2;
-	*t2 = *t1;
-	*t1 = (*t1)->next;
-	(*t2)->next = tmp;
+	if (*t1)
+	{
+		tmp = *t2;
+		*t2 = *t1;
+		*t1 = (*t1)->next;
+		(*t2)->next = tmp;
+	}
 	if (id == 1)
 		ft_printf("pb\n");
 	return (1);

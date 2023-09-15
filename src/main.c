@@ -6,7 +6,7 @@
 /*   By: aaudeber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 16:40:47 by aaudeber          #+#    #+#             */
-/*   Updated: 2023/09/15 13:51:57 by motoko           ###   ########.fr       */
+/*   Updated: 2023/09/15 16:21:13 by motoko           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,7 @@ int	main(int argc, char **argv)
 	else
 		ft_sort(&lst_a, &lst_b);
 	ft_lstclear(&lst_a);
+	ft_lstclear(&lst_b);
 	free_tab((void **)tab);
 	return (0);
 }

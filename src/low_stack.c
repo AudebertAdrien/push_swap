@@ -6,7 +6,7 @@
 /*   By: motoko <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 14:17:31 by motoko            #+#    #+#             */
-/*   Updated: 2023/09/14 18:30:33 by aaudeber         ###   ########.fr       */
+/*   Updated: 2023/09/15 16:32:15 by motoko           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,5 +100,5 @@ int	ft_low_stack(t_list **lst_a, t_list **lst_b)
 		while (!is_sorted(*lst_a))
 			ft_lstrotate_a(lst_a, *lst_a, (*lst_a)->next, 1);
 	}
-	return (0);
-}
+		return (0);
+	}

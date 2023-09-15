@@ -6,7 +6,7 @@
 /*   By: aaudeber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 18:40:41 by aaudeber          #+#    #+#             */
-/*   Updated: 2023/09/14 18:43:05 by aaudeber         ###   ########.fr       */
+/*   Updated: 2023/09/15 16:52:43 by motoko           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,13 +43,16 @@ int	ft_lstrotate_ra(t_list **lst, t_list *last, int size, int id)
 
 	i = 0;
 	tmp = *lst;
-	while (i < size - 2)
+	if (tmp && ft_lstsize(tmp) > 1)
 	{
-		tmp = tmp->next;
-		i++;
+		while (i < size - 2)
+		{
+			tmp = tmp->next;
+			i++;
+		}
+		tmp->next = NULL;
+		ft_lstadd_front(lst, last);
 	}
-	tmp->next = NULL;
-	ft_lstadd_front(lst, last);
 	if (id == 1)
 		ft_printf("rra\n");
 	return (1);
@@ -62,13 +65,17 @@ int	ft_lstrotate_rb(t_list **lst, t_list *last, int size, int id)
 
 	i = 0;
 	tmp = *lst;
-	while (i < size - 2)
+	if (tmp && ft_lstsize(tmp) > 1)
+
 	{
-		tmp = tmp->next;
-		i++;
+		while (i < size - 2)
+		{
+			tmp = tmp->next;
+			i++;
+		}
+		tmp->next = NULL;
+		ft_lstadd_front(lst, last);
 	}
-	tmp->next = NULL;
-	ft_lstadd_front(lst, last);
 	if (id == 1)
 		ft_printf("rrb\n");
 	return (1);
