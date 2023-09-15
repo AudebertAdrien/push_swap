@@ -6,7 +6,7 @@
 /*   By: aaudeber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 18:40:41 by aaudeber          #+#    #+#             */
-/*   Updated: 2023/09/15 16:52:43 by motoko           ###   ########.fr       */
+/*   Updated: 2023/09/15 17:13:06 by motoko           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,6 @@ int	ft_lstrotate_rb(t_list **lst, t_list *last, int size, int id)
 	i = 0;
 	tmp = *lst;
 	if (tmp && ft_lstsize(tmp) > 1)
-
 	{
 		while (i < size - 2)
 		{
