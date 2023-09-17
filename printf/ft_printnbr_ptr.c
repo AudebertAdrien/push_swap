@@ -24,7 +24,7 @@ static int	ft_processes_base(unsigned long nbr, char *base, int count)
 }
 
 int	ft_printnbr_ptr(unsigned long nbr)
-{	
+{
 	int	count;
 
 	count = 0;

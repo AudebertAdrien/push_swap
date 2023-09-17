@@ -38,7 +38,7 @@ char	*generate_table(int count)
 	if (!ptr)
 		return (NULL);
 	return (ptr);
-}	
+}
 
 unsigned int	convert_n(int n)
 {
@@ -64,7 +64,7 @@ char	*ft_itoa(int n)
 		return (NULL);
 	ptr[count] = '\0';
 	while (count--)
-	{	
+	{
 		ptr[count] = s % 10 + 48;
 		s /= 10;
 	}

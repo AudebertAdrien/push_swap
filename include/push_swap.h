@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP
-# define PUSH_SWAP
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
 
 # define BUFFER_SIZE 1024
 # define ERROR_MESSAGE "Error"
@@ -42,12 +42,12 @@ int		ft_lstrotate_b(t_list **lst, t_list *s1, t_list *s2, int id);
 int		ft_lstrotate_ra(t_list **lst, t_list *last, int size, int id);
 int		ft_lstrotate_rb(t_list **lst, t_list *last, int size, int id);
 
-int	ft_low_stack(t_list **lst_a, t_list **lst_b);
+int		ft_low_stack(t_list **lst_a, t_list **lst_b);
 void	ft_sort(t_list **lst_a, t_list **lst_b);
 void	ft_sort_and_index(t_list *lst);
 
 void	free_tab(void **tab);
-void	ft_error(void **tab, t_list **lst_a,  t_list **lst_b, char *s);
+void	ft_error(void **tab, t_list **lst_a, t_list **lst_b, char *s);
 
 int		is_sorted(t_list *lst);
 int		is_valid_number(char *s);

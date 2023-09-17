@@ -1,8 +1,8 @@
 MAIN		= push_swap
 CHECKER		= checker
 
-CC		= gcc -g
-CFLAGS		= -Wall -Wextra
+CC		= gcc
+CFLAGS		= -Wall -Wextra -Werror
 
 VPATH		= src
 
@@ -10,20 +10,20 @@ SRCS		= main.c \
 
 BONUS		= checker.c \
 		  checker_exec.c \
-			  get_next_line.c \
+		  get_next_line.c \
 
 UTILS		= rules.c \
-			  rules_part2.c \
-			  sort.c \
-			  low_stack.c \
-			  utils.c \
-			  error.c \
-			  ft_lstnew.c \
-			  ft_lstadd_front.c \
-			  ft_lstadd_back.c \
-			  ft_lstsize.c \
-			  ft_lstlast.c \
-			  ft_lstclear.c \
+		  rules_part2.c \
+		  sort.c \
+		  low_stack.c \
+		  utils.c \
+		  error.c \
+		  ft_lstnew.c \
+		  ft_lstadd_front.c \
+		  ft_lstadd_back.c \
+		  ft_lstsize.c \
+		  ft_lstlast.c \
+		  ft_lstclear.c \
 
 INC		= -I./include -I./libft -I./printf
 LIBFT		= -Llibft -lft 
@@ -35,7 +35,7 @@ OBJ_BONUS	= $(addprefix obj/, $(BONUS:.c=.o) $(UTILS:.c=.o))
 obj/%.o: src/%.c create_obj_dir
 	@$(CC) $(CFLAGS) $(INC) -c $< -o $@
 
-all: create_obj_dir $(MAIN) 
+all: create_obj_dir make_libs  $(MAIN) 
 
 create_obj_dir :
 	@mkdir -p obj
@@ -53,13 +53,13 @@ $(MAIN): $(OBJ)
 bonus:	$(OBJ_BONUS)
 	@echo ✅ "Compile checker\n"
 	@$(CC) $^ -o $(CHECKER) $(INC) $(LIBFT) $(PRINTF)
- 
+
 clean_libs:
 	@echo ✅ "Clean libft\n"
 	@make fclean -s -C ./libft
 	@echo ✅ "Clean ft_printf\n"
 	@make fclean -s -C ./printf
-	
+
 clean: 
 	@echo ✅ "Clean push_swap\n"
 	@rm -rf $(OBJ) $(OBJ_BONUS)
