@@ -6,7 +6,7 @@
 /*   By: motoko <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 14:17:31 by motoko            #+#    #+#             */
-/*   Updated: 2023/09/15 17:12:54 by motoko           ###   ########.fr       */
+/*   Updated: 2023/09/17 15:54:50 by aaudeber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,11 @@ int	sort_4_and_5(t_list **lst_a, t_list **lst_b)
 
 int	ft_low_stack(t_list **lst_a, t_list **lst_b)
 {
+	if (ft_lstsize(*lst_a) == 2)
+	{
+		if ((*lst_a)->index > (*lst_a)->next->index)
+			ft_lstswap_a(lst_a, *lst_a, (*lst_a)->next, 1);
+	}
 	if (ft_lstsize(*lst_a) == 3)
 		ft_three(lst_a);
 	if (ft_lstsize(*lst_a) == 4 || ft_lstsize(*lst_a) == 5)
